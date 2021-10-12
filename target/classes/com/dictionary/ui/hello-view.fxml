@@ -18,14 +18,15 @@
         <Label layoutX="-1.0" layoutY="597.0" prefHeight="18.0" prefWidth="801.0" text="MC" />
         <MenuBar layoutY="2.0" prefHeight="21.0" prefWidth="800.0">
             <menus>
-                <Menu mnemonicParsing="false" text="chức năng">
+                <Menu mnemonicParsing="false" text="Chức Năng">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#tra" text="Tra từ" />
-                        <MenuItem mnemonicParsing="false" onAction="#search" text="tìm kiếm" />
-                        <MenuItem mnemonicParsing="false" onAction="#them" text="thêm" />
-                        <MenuItem mnemonicParsing="false" onAction="#remove" text="xóa" />
+                        <MenuItem mnemonicParsing="false" onAction="#search" text="Tìm kiếm" />
+                        <MenuItem mnemonicParsing="false" onAction="#them" text="Thêm từ" />
+                        <MenuItem mnemonicParsing="false" onAction="#remove" text="Xóa từ" />
                     </items>
                 </Menu>
+            <Menu mnemonicParsing="false" text="Hướng Dẫn" />
             </menus>
         </MenuBar>
         <Label contentDisplay="CENTER" layoutX="250.0" layoutY="38.0" prefHeight="54.0" prefWidth="300.0" text="Từ Điển Anh - Việt" textAlignment="RIGHT" textFill="#f200b5">
@@ -158,6 +159,12 @@
                </children>
             </HBox>
             <Button layoutX="365.0" layoutY="232.0" mnemonicParsing="false" text="Xác nhận" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="formHuongDan" layoutY="104.0" prefHeight="495.0" prefWidth="800.0">
+         <children>
+            <Label layoutX="14.0" layoutY="160.0" prefHeight="88.0" prefWidth="200.0" text="Tác Giả:&#10;     + Bùi Mạnh Cường&#10;     + Nguyễn Đức Minh&#10;" />
+            <Label layoutX="243.0" layoutY="117.0" prefHeight="174.0" prefWidth="542.0" text="Hướng Dẫn:&#10;&#10;Trên thanh menu có mục Chức năng có chứa:&#10;&#9;+ Tra từ: tra nghĩa, cách đọc của 1 từ tiếng anh(chính xác).&#10;&#9;+ Tìm từ: Tìm kiếm các từ có chứa chữ mà người dùng nhập vào.&#10;&#9;+ Thêm từ: Thêm 1 từ mới vào từ điển.&#10;&#9;+ Xóa từ: Xóa 1 từ khỏi từ điển.&#10;&#10;Muốn sửa dụng chức năng nào thì mình chọn chức năng đó thôi." />
          </children>
       </AnchorPane>
     </children>
