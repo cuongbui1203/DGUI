@@ -25,5 +25,6 @@
     <orderEntry type="library" name="Maven: org.controlsfx:controlsfx:8.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.dlsc.formsfx:formsfx-core:8.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.28.0" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.sociaal:freetts:1.2.2" level="project" />
   </component>
 </module>

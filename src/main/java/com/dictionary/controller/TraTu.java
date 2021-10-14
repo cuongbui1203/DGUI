@@ -1,10 +1,10 @@
-package com.dictionary.controler;
+package com.dictionary.controller;
 
-import com.dictionary.base.Form;
 import com.dictionary.base.Word;
+import com.dictionary.base.Form;
+import javafx.scene.control.TextField;
 import com.dictionary.database.DatabaseController;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
@@ -15,14 +15,13 @@ public class TraTu implements Form {
     Label pa;
     TextField input;
 
-    public TraTu(DatabaseController db, WebView webViewTra, TextField input, Label en, Label pa) {
+    public TraTu(DatabaseController db, WebView webViewTra, TextField input, Label en, Label pa){
         this.db = db;
         this.engine = webViewTra.getEngine();
         this.en = en;
         this.pa = pa;
         this.input = input;
     }
-
     @Override
     public void reset() {
         engine.loadContent("");
@@ -32,7 +31,7 @@ public class TraTu implements Form {
 
     }
 
-    public void Tra() {
+    public void Tra(){
         String s = input.getText();
         s = s.toLowerCase();
         Word w = db.searchWord(s);
@@ -40,7 +39,7 @@ public class TraTu implements Form {
         if (w != null) {
             show(w);
         } else {
-            show("<h2>Không Tìm Thấy: " + s + "</h2>");
+            show("<h2>Không Tìm Thấy: " + s+"</h2>");
         }
     }
 
@@ -52,8 +51,8 @@ public class TraTu implements Form {
 
     }
 
-    public void show(String s) {
-        engine.loadContent("<html>" + s + "</html>");
+    public void show(String s){
+        engine.loadContent("<html>"+s+"</html>");
     }
 
 }

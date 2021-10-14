@@ -1,4 +1,4 @@
-package com.dictionary.controler;
+package com.dictionary.controller;
 
 import com.dictionary.base.Form;
 import javafx.scene.control.TextField;

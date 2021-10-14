@@ -1,11 +1,11 @@
-package com.dictionary.controler;
+package com.dictionary.controller;
 
-import com.dictionary.base.Form;
 import com.dictionary.base.Word;
+import com.dictionary.base.Form;
+import javafx.scene.control.TextField;
 import com.dictionary.database.DatabaseController;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 
 public class ThemTu implements Form {
     private final DatabaseController db;
@@ -25,28 +25,26 @@ public class ThemTu implements Form {
         this.nghiaAdd = nghiaAdd;
         this.checkAdd = checkAdd;
         word = new Word();
-        nghia = null;
     }
 
     private void createHtml() {
         word.code_html = "";
-        StringBuilder s = new StringBuilder();
-        s.append("<h1>").append(word.word_target).append("</h1>");
-        s.append("<h3><i>").append(word.word_pa).append("</i></h3>");
-        s.append("<h2>").append(word.word_loai).append("</h2>");
+        word.code_html += "<h1>" + word.word_target + "</h1>"
+                + "<h3><i>" + word.word_pa + "</i></h3>"
+                + "<h2>" + word.word_loai + "</h2>";
         if (word.word_explain.length() != 0) {
-            s.append("<ul>");
             word.code_html += "<ul>";
             nghia = word.word_explain.split("\n");
-            for (String t : nghia) s.append("<li>").append(t).append("</li>");
-           s.append( "</ul>");
+            for (String t : nghia) {
+                word.code_html += "<li>" + t + "</li>";
+            }
+            word.code_html += "</ul>";
         }
-        word.code_html = s.toString();
     }
 
     private void add() {
         boolean t = db.addNewWordToDatabase(word);
-        String s = t ? "Thêm thành công!" : "Thất bại!!!";
+        String s = t ? "Thêm thành công!":"Thất bại!!!";
         checkAdd.setText(s);
     }
 

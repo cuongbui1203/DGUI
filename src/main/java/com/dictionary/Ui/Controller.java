@@ -1,18 +1,18 @@
 package com.dictionary.ui;
 
 import com.dictionary.base.Status;
-import com.dictionary.controler.ThemTu;
-import com.dictionary.controler.TimTu;
-import com.dictionary.controler.TraTu;
+import com.dictionary.controller.ThemTu;
+import com.dictionary.controller.TimTu;
+import com.dictionary.controller.TraTu;
 import com.dictionary.database.DatabaseController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebView;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -68,12 +68,11 @@ public class Controller implements Initializable {
     public void initialize(URL agr0, ResourceBundle agr1) {
         db = new DatabaseController();
         traTu = new TraTu(db, webViewTra, enInput, wordEn, wordPA);
-        timTu = new TimTu(db, timInput, webViewTim);
-        themTu = new ThemTu(db, enAdd, plAdd, paAdd, nghiaAdd, checkAdd);
+        timTu = new TimTu(db,timInput,webViewTim);
+        themTu = new ThemTu(db,enAdd,plAdd,paAdd,nghiaAdd,checkAdd);
         chanett(Status.huongDan);
     }
 //--------------------------------------------
-
     /**
      * chuyển trạng thái hiện tại của chương trình.<br/>
      * Hướng Dẫn
@@ -135,12 +134,11 @@ public class Controller implements Initializable {
      * Sửa 1 từ.
      */
     @FXML
-    public void sua() {
+    public void sua(){
         chanett(Status.suaTu);
     }
-
-    //--------------------------------------------
-    private void setVisibleFalse() {
+//--------------------------------------------
+    private void setVisibleFalse(){
         formThemTu.setVisible(false);
         formTimTu.setVisible(false);
         formTraTu.setVisible(false);
@@ -203,7 +201,14 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    public void add() {
+    public void add(){
         themTu.them();
     }
 }
+/***
+ * ------------
+ * id en vn
+ * ---------
+ *
+ * id| en |code_html |mở rộng | cách phát âm
+ */

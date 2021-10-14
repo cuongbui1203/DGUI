@@ -109,7 +109,7 @@
                 <WebView fx:id="webViewTim" layoutX="10.0" layoutY="112.0" prefHeight="376.0" prefWidth="778.0" />
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="formThemTu" layoutY="104.0" prefHeight="495.0" prefWidth="800.0" visible="false">
+        <AnchorPane fx:id="formThemTu" layoutY="104.0" prefHeight="495.0" prefWidth="800.0">
          <children>
             <Label layoutX="290.0" layoutY="14.0" text="Thêm từ mới vào từ điển">
                <font>
@@ -165,10 +165,10 @@
             <Button layoutX="365.0" layoutY="232.0" mnemonicParsing="false" text="Xác nhận" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="formHuongDan" layoutY="104.0" prefHeight="495.0" prefWidth="800.0">
+      <AnchorPane fx:id="formHuongDan" layoutY="104.0" prefHeight="495.0" prefWidth="800.0" visible="false">
          <children>
-            <Label layoutX="14.0" layoutY="160.0" prefHeight="101.0" prefWidth="200.0" text="Tác Giả:&#10;     + Bùi Mạnh Cường&#10;     + Nguyễn Đức Minh&#10;" />
-            <Label layoutX="243.0" layoutY="100.0" prefHeight="220.0" prefWidth="542.0" text="Hướng Dẫn:&#10;&#10;Trên thanh menu có mục Chức năng có chứa:&#10;&#9;+ Tra từ: tra nghĩa, cách đọc của 1 từ tiếng anh(chính xác).&#10;&#9;+ Tìm từ: Tìm kiếm các từ có chứa chữ mà người dùng nhập vào.&#10;&#9;+ Thêm từ: Thêm 1 từ mới vào từ điển.&#10;&#9;+ Xóa từ: Xóa 1 từ khỏi từ điển.&#10;&#10;Muốn sửa dụng chức năng nào thì mình chọn chức năng đó thôi." />
+            <Label layoutX="14.0" layoutY="160.0" prefHeight="88.0" prefWidth="200.0" text="Tác Giả:&#10;     + Bùi Mạnh Cường&#10;     + Nguyễn Đức Minh&#10;" />
+            <Label layoutX="243.0" layoutY="117.0" prefHeight="174.0" prefWidth="542.0" text="Hướng Dẫn:&#10;&#10;Trên thanh menu có mục Chức năng có chứa:&#10;&#9;+ Tra từ: tra nghĩa, cách đọc của 1 từ tiếng anh(chính xác).&#10;&#9;+ Tìm từ: Tìm kiếm các từ có chứa chữ mà người dùng nhập vào.&#10;&#9;+ Thêm từ: Thêm 1 từ mới vào từ điển.&#10;&#9;+ Xóa từ: Xóa 1 từ khỏi từ điển.&#10;&#10;Muốn sửa dụng chức năng nào thì mình chọn chức năng đó thôi." />
          </children>
       </AnchorPane>
     </children>

@@ -15,7 +15,7 @@ public class DictionaryApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DictionaryUi.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("Từ Điển");
         stage.setScene(scene);
