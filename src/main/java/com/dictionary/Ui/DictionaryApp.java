@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class DictionaryApp extends Application {
-
     public static void main(String[] args) {
         launch();
     }
@@ -22,4 +21,10 @@ public class DictionaryApp extends Application {
         stage.setResizable(false);
         stage.show();
     }
+
+    @Override
+    public void stop() throws Exception {
+        System.exit(0);
+    }
+
 }
