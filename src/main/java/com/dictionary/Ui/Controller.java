@@ -5,6 +5,7 @@ import com.dictionary.controller.ThemTu;
 import com.dictionary.controller.TimTu;
 import com.dictionary.controller.TraTu;
 import com.dictionary.database.DatabaseController;
+import com.dictionary.tts.TTSController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -80,6 +81,7 @@ public class Controller implements Initializable {
     @FXML
     public void HuongDan() {
         chanett(Status.huongDan);
+
         System.out.println("hd");
     }
 
@@ -203,6 +205,15 @@ public class Controller implements Initializable {
     @FXML
     public void add(){
         themTu.them();
+    }
+
+    @FXML
+    public void phat(){
+        TTSController.phatam(wordEn.getText());
+    }
+
+    public void off(){
+
     }
 }
 /***
