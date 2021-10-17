@@ -21,7 +21,6 @@
             <artifactId>javafx-controls</artifactId>
             <version>11</version>
         </dependency>
-
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
@@ -38,7 +37,6 @@
             <artifactId>controlsfx</artifactId>
             <version>8.0.1</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.dlsc.formsfx/formsfx-core -->
         <dependency>
             <groupId>com.dlsc.formsfx</groupId>
@@ -51,22 +49,18 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.28.0</version>
         </dependency>
-
-
         <!-- https://mvnrepository.com/artifact/net.sf.sociaal/freetts -->
         <dependency>
             <groupId>net.sf.sociaal</groupId>
             <artifactId>freetts</artifactId>
             <version>1.2.2</version>
         </dependency>
-
 
     </dependencies>
 
@@ -91,7 +85,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.ui.dictionarygui/com.ui.dictionarygui.HelloApplication</mainClass>
+                            <mainClass>com.ui.dictionary/com.ui.dictionary.DictionaryApp</mainClass>
                         </configuration>
                     </execution>
                 </executions>

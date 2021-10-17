@@ -10,7 +10,7 @@ public class XoaTu implements Form {
     Label output;
     DatabaseController db;
 
-    XoaTu(DatabaseController db,TextField input,Label output){
+    public XoaTu(DatabaseController db, TextField input, Label output){
         this.input = input;
         this.output = output;
         this.db = db;

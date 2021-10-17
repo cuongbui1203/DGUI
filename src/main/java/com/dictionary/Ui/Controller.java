@@ -4,12 +4,15 @@ import com.dictionary.base.Status;
 import com.dictionary.controller.ThemTu;
 import com.dictionary.controller.TimTu;
 import com.dictionary.controller.TraTu;
+import com.dictionary.controller.XoaTu;
 import com.dictionary.database.DatabaseController;
 import com.dictionary.tts.TTSController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebView;
@@ -23,6 +26,8 @@ public class Controller implements Initializable {
     private TraTu traTu;
     private TimTu timTu;
     private ThemTu themTu;
+    private XoaTu xoaTu;
+    private Status tt = Status.huongDan;
 
     @FXML
     private WebView webViewTra;
@@ -45,6 +50,8 @@ public class Controller implements Initializable {
     @FXML
     private TextArea nghiaAdd;
     @FXML
+    private TextField xoaInput;
+    @FXML
     private VBox formTraTu;
     @FXML
     private AnchorPane formTimTu;
@@ -58,6 +65,8 @@ public class Controller implements Initializable {
     private AnchorPane formSuaTu;
     @FXML
     private Label checkAdd;
+    @FXML
+    private Label labelOut;
 
     /**
      * khởi tạo các thành phần cần thiết.
@@ -71,6 +80,7 @@ public class Controller implements Initializable {
         traTu = new TraTu(db, webViewTra, enInput, wordEn, wordPA);
         timTu = new TimTu(db,timInput,webViewTim);
         themTu = new ThemTu(db,enAdd,plAdd,paAdd,nghiaAdd,checkAdd);
+        xoaTu = new XoaTu(db,xoaInput,labelOut);
         chanett(Status.huongDan);
     }
 //--------------------------------------------
@@ -157,28 +167,36 @@ public class Controller implements Initializable {
         setVisibleFalse();
         traTu.reset();
         timTu.reset();
+        xoaTu.reset();
+        themTu.reset();
         switch (tt) {
             case huongDan:
                 formHuongDan.setVisible(true);
+                tt = Status.huongDan;
                 System.out.println("none");
                 break;
             case them:
                 formThemTu.setVisible(true);
+                tt = Status.them;
                 System.out.println("them");
                 break;
             case suaTu:
+                tt = Status.suaTu;
                 System.out.println("sua");
                 break;
             case traTu:
                 formTraTu.setVisible(true);
+                tt = Status.traTu;
                 System.out.println("tra");
                 break;
             case xoaTu:
                 formXoaTu.setVisible(true);
+                tt = Status.xoaTu;
                 System.out.println("xoa");
                 break;
             case timKiem:
                 formTimTu.setVisible(true);
+                tt = Status.timKiem;
                 System.out.println("tim");
                 break;
             default:
@@ -208,12 +226,36 @@ public class Controller implements Initializable {
     }
 
     @FXML
+    public void xoa(){
+        xoaTu.xoa();
+    }
+
+    @FXML
     public void phat(){
         TTSController.phatam(wordEn.getText());
     }
 
-    public void off(){
-
+    @FXML
+    public void enter(KeyEvent e){
+        if(e.getCode() == KeyCode.ENTER){
+            System.out.println("e");
+            switch (tt){
+                case timKiem:
+                    seacher();
+                    break;
+                case xoaTu:
+                    xoa();
+                    break;
+                case traTu:
+                    traTu.Tra();
+                    break;
+                case suaTu:
+                    break;
+                case them:
+                    add();
+                    break;
+            }
+        }
     }
 }
 /***
