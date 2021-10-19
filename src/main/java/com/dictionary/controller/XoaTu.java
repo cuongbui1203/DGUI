@@ -23,8 +23,8 @@ public class XoaTu implements Form {
     }
 
     public void xoa(){
-        String s;
-        s = db.removeWord(input.getText()) ? "Đã xóa thành công":"Lỗi: Không tìm thấy từ bạn muốn xóa. kiểm tra lại.";
+        String s = input.getText();
+        s = db.removeWord(s) ? "Đã xóa thành công":"Lỗi: Không tìm thấy từ bạn muốn xóa. kiểm tra lại.";
         output.setText(s);
     }
 }

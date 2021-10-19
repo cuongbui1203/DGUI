@@ -26,7 +26,7 @@ public class TimTu implements Form {
     public void tim(){
         String s = input.getText();
         if(s.length() <= 1){
-            engine.loadContent("<html><h2>Từ bạn vừa nhập quá ngắn.<br/>Vui lòng nhập từ khác dài hơn</h2></html>");
+            engine.loadContent("<html><body><center><h2>Từ bạn vừa nhập quá ngắn.<br/>Vui lòng nhập từ khác dài hơn</h2></center></body></html>");
         }else{
             engine.loadContent("<html>"+db.searcherWord(input.getText())+"</html>");
         }

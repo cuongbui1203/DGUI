@@ -54,7 +54,7 @@ public class ThemTu implements Form {
         word.word_loai = plAdd.getText();
         word.word_explain = nghiaAdd.getText();
         createHtml();
-//        add();
+        add();
         System.out.println(word.code_html);
     }
 

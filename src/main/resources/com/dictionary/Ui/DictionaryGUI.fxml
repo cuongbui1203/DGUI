@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane onKeyPressed="#enter" prefHeight="630.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.ui.Controller">
+    <children>
+        <Label layoutX="-1.0" layoutY="607.0" prefHeight="18.0" prefWidth="801.0" text=" Cường &amp; Minh" />
+        <MenuBar layoutY="2.0" prefHeight="21.0" prefWidth="800.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Menu">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#tra" text="Tra từ" />
+                        <MenuItem mnemonicParsing="false" onAction="#search" text="Tìm từ" />
+                        <MenuItem mnemonicParsing="false" onAction="#them" text="Thêm từ" />
+                        <MenuItem mnemonicParsing="false" onAction="#remove" text="Xóa từ" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#HuongDan" text="Hướng dẫn" />
+                    </items></Menu>
+            </menus>
+        </MenuBar>
+        <Label contentDisplay="CENTER" layoutX="250.0" layoutY="38.0" prefHeight="54.0" prefWidth="300.0" text="Từ Điển Anh - Việt" textAlignment="RIGHT" textFill="#f200b5">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+        <VBox fx:id="formTraTu" layoutY="104.0" prefHeight="495.0" prefWidth="800.0" visible="false">
+            <children>
+                <HBox fx:id="hbox1" prefHeight="50.0" prefWidth="800.0">
+                    <children>
+                        <VBox prefHeight="54.0" prefWidth="534.0">
+                            <children>
+                                <TextField fx:id="enInput" prefHeight="30.0" prefWidth="570.0" promptText="Nhập từ cần tra (Tiếng Anh)" />
+                            </children>
+                        </VBox>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <Button fx:id="traBtn" layoutX="1.0" mnemonicParsing="false" onMouseClicked="#Tra" prefHeight="27.0" prefWidth="294.0" text="Tra" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+                <HBox prefHeight="420.0" prefWidth="800.0">
+                    <children>
+                        <AnchorPane prefHeight="420.0" prefWidth="377.0">
+                            <children>
+                                <HBox layoutY="24.0" prefHeight="34.0" prefWidth="306.0">
+                                    <children>
+                                        <Label prefHeight="34.0" prefWidth="112.0" text="Tiếng Anh:" textAlignment="CENTER">
+                                            <font>
+                                                <Font size="23.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="wordEn" alignment="CENTER" prefHeight="34.0" prefWidth="197.0" textAlignment="CENTER">
+                                            <font>
+                                                <Font size="23.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <HBox layoutY="110.0" prefHeight="34.0" prefWidth="306.0">
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="34.0" prefWidth="99.0" text="Phát Âm:" textAlignment="CENTER">
+                                            <font>
+                                                <Font size="23.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="wordPA" alignment="CENTER" prefHeight="34.0" prefWidth="206.0" textAlignment="CENTER">
+                                            <font>
+                                                <Font size="23.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <Button layoutX="14.0" layoutY="156.0" mnemonicParsing="false" onMouseClicked="#phat" text="Phát âm" />
+                            </children>
+                        </AnchorPane>
+                        <WebView fx:id="webViewTra" prefHeight="420.0" prefWidth="567.0" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <AnchorPane fx:id="formTimTu" layoutY="104.0" prefHeight="495.0" prefWidth="800.0">
+            <children>
+                <Label alignment="CENTER" layoutX="341.0" layoutY="14.0" text="Tìm Từ">
+                    <font>
+                        <Font size="31.0" />
+                    </font>
+                </Label>
+                <HBox layoutX="184.0" layoutY="70.0" prefHeight="34.0" prefWidth="432.0">
+                    <children>
+                        <Label prefHeight="28.0" prefWidth="134.0" text="Nhập từ muồn tìm:" />
+                        <TextField fx:id="timInput" prefHeight="34.0" prefWidth="214.0" />
+                        <Button mnemonicParsing="false" onMouseClicked="#seacher" prefHeight="27.0" prefWidth="106.0" text="Tìm" />
+                    </children>
+                </HBox>
+                <WebView fx:id="webViewTim" layoutX="10.0" layoutY="112.0" prefHeight="376.0" prefWidth="778.0" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="formThemTu" layoutY="104.0" prefHeight="495.0" prefWidth="800.0" visible="false">
+            <children>
+                <Label layoutX="290.0" layoutY="14.0" text="Thêm từ mới vào từ điển">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                </Label>
+                <HBox layoutX="178.0" layoutY="83.0" prefHeight="34.0" prefWidth="438.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="103.0" text="Từ tiếng anh:" textAlignment="CENTER" />
+                        <TextField fx:id="enAdd" prefHeight="34.0" prefWidth="338.0" />
+                    </children>
+                </HBox>
+                <HBox layoutX="180.0" layoutY="126.0" prefHeight="34.0" prefWidth="438.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="103.0" text="Phân loại:" textAlignment="CENTER" />
+                        <TextField fx:id="plAdd" prefHeight="34.0" prefWidth="338.0" />
+                    </children>
+                </HBox>
+                <HBox layoutX="181.0" layoutY="211.0" prefHeight="194.0" prefWidth="438.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="103.0" text="Nghĩa:" textAlignment="CENTER" />
+                        <TextArea fx:id="nghiaAdd" prefHeight="194.0" prefWidth="338.0" />
+                    </children>
+                </HBox>
+                <Button layoutX="427.0" layoutY="428.0" mnemonicParsing="false" onMouseClicked="#add" prefHeight="30.0" prefWidth="196.0" text="Xác nhận" />
+                <HBox layoutX="181.0" layoutY="169.0" prefHeight="34.0" prefWidth="438.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="103.0" text="Cách Phát âm:" textAlignment="CENTER" />
+                        <TextField fx:id="paAdd" prefHeight="34.0" prefWidth="338.0" />
+                    </children>
+                </HBox>
+                <Label fx:id="checkAdd" alignment="CENTER" layoutX="211.0" layoutY="428.0" prefHeight="30.0" prefWidth="196.0" />
+            </children></AnchorPane>
+        <AnchorPane fx:id="formXoaTu" layoutY="104.0" prefHeight="495.0" prefWidth="800.0" visible="false">
+            <children>
+                <Label layoutX="356.0" layoutY="26.0" text="Xóa từ">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Label>
+                <HBox layoutX="190.0" layoutY="104.0" prefHeight="34.0" prefWidth="379.0">
+                    <children>
+                        <Label prefHeight="34.0" prefWidth="149.0" text="Nhập từ cần xóa:" />
+                        <TextField prefHeight="34.0" prefWidth="232.0" fx:id="xoaInput" />
+                    </children>
+                </HBox>
+                <HBox layoutX="190.0" layoutY="138.0" prefHeight="34.0" prefWidth="379.0">
+                    <children>
+                        <Label prefHeight="34.0" prefWidth="150.0" text="Trạng Thái:" />
+                        <Label fx:id="labelOut" prefHeight="33.0" prefWidth="231.0" />
+                    </children>
+                </HBox>
+                <Button layoutX="368.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#xoa" text="Xác nhận" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="formHuongDan" layoutY="104.0" prefHeight="495.0" prefWidth="800.0" visible="false">
+            <children>
+                <Label layoutX="14.0" layoutY="160.0" prefHeight="88.0" prefWidth="200.0" text="Tác Giả:&#10;     + Bùi Mạnh Cường&#10;     + Nguyễn Đức Minh&#10;">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font></Label>
+                <Label layoutX="243.0" layoutY="117.0" prefHeight="222.0" prefWidth="542.0" text="Hướng Dẫn:&#10;&#10;Trên thanh menu có mục Chức năng có chứa:&#10;&#9;+ Tra từ: tra nghĩa, cách phát âm của 1 từ tiếng anh(chính xác).&#10;&#9;+ Tìm từ: Tìm kiếm các từ có chứa chữ mà người dùng nhập vào.&#10;&#9;+ Thêm từ: Thêm 1 từ mới do người dùng nhập vào từ điển.&#10;&#9;+ Xóa từ: Xóa 1 từ mà người dùng muốn xóa ra khỏi từ điển.&#10;&#10;Muốn sử dụng chức năng nào thì ta chọn Menu -&gt; chức năng cần dùng.">
+                    <font>
+                        <Font name="System Italic" size="15.0" />
+                    </font></Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="104.0" prefHeight="495.0" prefWidth="800.0" visible="false">
+            <children>
+                <AnchorPane layoutX="24.0" layoutY="72.0" prefHeight="390.0" prefWidth="260.0">
+                    <children>
+                        <TextField fx:id="inputSua" layoutX="31.0" layoutY="85.0" prefHeight="26.0" prefWidth="196.0" promptText="Từ muốn sửa" />
+                        <Label fx:id="checkSua" layoutX="45.0" layoutY="223.0" prefHeight="43.0" prefWidth="166.0" />
+                        <Button layoutX="101.0" layoutY="342.0" mnemonicParsing="false" text="Tìm" />
+                        <TextField fx:id="enSua" prefHeight="26.0" prefWidth="200.0" promptText="EN" />
+                    </children>
+                </AnchorPane>
+                <Label layoutX="356.0" layoutY="29.0" text="Sửa Từ">
+                    <font>
+                        <Font size="29.0" />
+                    </font>
+                </Label>
+                <AnchorPane layoutX="400.0" layoutY="52.0" prefHeight="390.0" prefWidth="368.0">
+                    <children>
+                        <TextField fx:id="paSua" layoutX="139.0" layoutY="102.0" prefHeight="26.0" prefWidth="200.0" promptText="Phát âm" />
+                        <TextArea fx:id="nghiaSua" layoutX="139.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" promptText="Nghĩa" />
+                        <Button layoutX="37.0" layoutY="359.0" mnemonicParsing="false" text="Xác Nhận" />
+                        <TextField fx:id="plSua" layoutX="139.0" layoutY="140.0" prefHeight="26.0" prefWidth="200.0" promptText="Phân Loại" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

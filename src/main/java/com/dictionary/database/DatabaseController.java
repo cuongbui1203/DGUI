@@ -22,7 +22,7 @@ public class DatabaseController {
 
     public DatabaseController() {
         try {
-            String url = "jdbc:sqlite:.\\database\\dict_hh.sqlite";
+            String url = "jdbc:sqlite:.\\database\\dict_hh.db";
 //            String url = "jdbc:sqlite:C:\\Users\\Kuon\\Downloads\\New folder\\dict_hh.db";
             dbconect = DriverManager.getConnection(url);
             System.out.println("Connected to Database");
